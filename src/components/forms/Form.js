@@ -5,11 +5,21 @@ import { Select, Box, CheckIcon, Text } from "native-base";
 import { getSearchResults } from "../services/api";
 
 const Form = (props) => {
-  const { option, setOption, dropdown, populateMovies, callType } = props;
+  const {
+    option,
+    setOption,
+    dropdown,
+    populateMovies,
+    callType,
+    setLoading,
+    setMessage,
+  } = props;
   const [searchQuery, setSearchQuery] = useState("");
 
   const onSubmit = () => {
     fetchSearchResults(callType, searchQuery, option);
+    setLoading(true);
+    setMessage(false);
   };
 
   const fetchSearchResults = async (callType, searchQuery, option) => {
