@@ -26,7 +26,7 @@ const SelectForm = ({
         key={option}
         defaultValue={dropdown[0]}
         _selectedItem={{
-          bg: "teal.600",
+          bg: "#52b3d1",
           endIcon: <CheckIcon size="5" />,
         }}
         mt={1}
