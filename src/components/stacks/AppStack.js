@@ -1,15 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
 import MoviesScreen from "../screens/MoviesScreen";
 import DetailScreen from "../screens/DetailScreen";
-
 import SearchResultsScreen from "../screens/SearchResultsScreen";
 import TVShowsScreen from "../screens/TVShowsScreen";
-
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import Header from "../layout/Header";
 
 const Tab = createMaterialTopTabNavigator();
 

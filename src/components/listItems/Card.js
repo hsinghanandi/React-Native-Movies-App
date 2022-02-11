@@ -19,7 +19,7 @@ const Card = ({
   overview,
 }) => {
   return (
-    <Box alignItems="center">
+    <Box alignItems="center" mb={3}>
       <Box
         maxW="80"
         rounded="lg"

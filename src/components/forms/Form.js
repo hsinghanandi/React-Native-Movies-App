@@ -1,28 +1,15 @@
 import React, { useState } from "react";
 import { Button, FormControl, HStack, Icon, Input, VStack } from "native-base";
 import { Ionicons } from "@expo/vector-icons";
-import {
-  Select,
-  Box,
-  CheckIcon,
-  Center,
-  Text,
-  NativeBaseProvider,
-} from "native-base";
+import { Select, Box, CheckIcon, Text } from "native-base";
 import { getSearchResults } from "../services/api";
 
 const Form = (props) => {
   const { option, setOption, dropdown, populateMovies, callType } = props;
   const [searchQuery, setSearchQuery] = useState("");
-  const [errors, setErrors] = useState({});
-  // const [searchResults, setSearchResults] = useState([]);
-
-  // const [option, setOption] = useState("");
 
   const onSubmit = () => {
-    // fetchRecipes()
     fetchSearchResults(callType, searchQuery, option);
-    console.log("Search button clicked!", callType, searchQuery, option);
   };
 
   const fetchSearchResults = async (callType, searchQuery, option) => {
@@ -36,8 +23,6 @@ const Form = (props) => {
     } catch (error) {
       console.log(error.message);
     }
-
-    // console.log("SEARCHED", data);
   };
 
   return (
@@ -62,8 +47,6 @@ const Form = (props) => {
               />
             }
             onChangeText={(value) => {
-              // console.log(value)d
-              // onInputChange(value)
               setSearchQuery(value);
             }}
           />
@@ -86,7 +69,6 @@ const Form = (props) => {
               mt={1}
               onValueChange={(itemValue) => {
                 setOption(itemValue);
-                // fetchMovies(itemValue);
               }}
             >
               {dropdown &&

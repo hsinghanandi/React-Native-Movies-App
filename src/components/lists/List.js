@@ -23,7 +23,7 @@ const List = (props) => {
           navigation={navigation}
         />
       )}
-      // keyExtractor={(item) => item.url}
+      keyExtractor={(item) => item.id}
       showsVerticalScrollIndicator={false}
     />
   );

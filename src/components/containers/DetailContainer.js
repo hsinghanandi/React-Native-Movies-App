@@ -1,6 +1,7 @@
 import {
   Center,
   VStack,
+  HStack,
   Stack,
   Heading,
   Text,
@@ -10,26 +11,21 @@ import {
 } from "native-base";
 import React from "react";
 
-// title,
-// popularity,
-// release_date,
-// img,
-
-const DetailContainer = ({ navigation, data }) => {
+const DetailContainer = ({ data }) => {
   return (
-    <VStack space={3} py={2}>
+    <VStack space={5} py={3} px={5}>
       <Stack p="6" space={2}>
         <Center>
-          <Stack>
-            <Heading size="sm" ml="-1">
+          <Stack pb={5}>
+            <Heading size="md" ml="-1">
               {data.title}
             </Heading>
           </Stack>
         </Center>
-        <Center>
-          <Stack>
-            <Box>
-              <AspectRatio w="100%" ratio={1}>
+        <Stack>
+          <Box>
+            <Center>
+              <AspectRatio w="80%" ratio={1}>
                 <Image
                   source={{
                     uri: data.img,
@@ -37,9 +33,9 @@ const DetailContainer = ({ navigation, data }) => {
                   alt="image"
                 />
               </AspectRatio>
-            </Box>
-          </Stack>
-        </Center>
+            </Center>
+          </Box>
+        </Stack>
 
         <Center>
           <Stack p="2">
@@ -55,33 +51,30 @@ const DetailContainer = ({ navigation, data }) => {
           </Stack>
         </Center>
 
-        <Center>
+        <HStack p="2" space={1}>
           <Stack>
             <Text
               color="coolGray.600"
               _dark={{
                 color: "warmGray.200",
               }}
-              fontWeight="300"
+              fontWeight="500"
             >
               Popularity: {data.popularity}
             </Text>
           </Stack>
-        </Center>
-
-        <Center>
           <Stack>
             <Text
               color="coolGray.600"
               _dark={{
                 color: "warmGray.200",
               }}
-              fontWeight="300"
+              fontWeight="500"
             >
-              Release Date: {data.release_date}
+              | Release Date: {data.release_date}
             </Text>
           </Stack>
-        </Center>
+        </HStack>
       </Stack>
     </VStack>
   );
