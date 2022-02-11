@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Center, Stack, VStack, Text } from "native-base";
+import { Center, VStack, Text } from "native-base";
 import Form from "../forms/Form";
 import List from "../lists/List";
 import Loading from "../layout/Loading";
@@ -28,13 +28,14 @@ const SearchResultsContainer = ({ navigation }) => {
           setMessage={setMessage}
         />
       </Center>
+
       {message ? (
-        <Stack alignItems="center" justifyContent="center">
-          <Text>Please Initiate a Search!</Text>
-        </Stack>
-      ) : (
-        <Text></Text>
-      )}
+        <Center>
+          <Text fontSize="2xl" bold>
+            Please initiate a search!
+          </Text>
+        </Center>
+      ) : null}
 
       {loading ? <Loading /> : <List navigation={navigation} movies={movies} />}
     </VStack>
