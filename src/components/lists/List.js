@@ -10,9 +10,9 @@ const List = (props) => {
   return (
     <FlatList
       data={movies}
-      renderItem={({ item }) => (
+      renderItem={({ item, index }) => (
         <Card
-          key={item.id}
+          key={index}
           title={item.title ? item.title : item.name}
           popularity={item.popularity}
           release_date={
@@ -23,7 +23,7 @@ const List = (props) => {
           navigation={navigation}
         />
       )}
-      keyExtractor={(item) => item.url}
+      // keyExtractor={(item) => item.url}
       showsVerticalScrollIndicator={false}
     />
   );

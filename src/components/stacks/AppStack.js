@@ -31,7 +31,20 @@ const AppStack = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={TabStack} />
+        <Stack.Screen
+          name="Home"
+          component={TabStack}
+          options={{
+            title: "Movies",
+            headerStyle: {
+              backgroundColor: "teal",
+            },
+            headerTintColor: "#fff",
+            headerTitleStyle: {
+              fontWeight: "bold",
+            },
+          }}
+        />
         <Stack.Screen
           name="Details Page"
           component={DetailScreen}
