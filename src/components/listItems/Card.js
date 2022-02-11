@@ -10,7 +10,14 @@ import {
 } from "native-base";
 import React from "react";
 
-const Card = ({ title, popularity, release_date, img, navigation }) => {
+const Card = ({
+  title,
+  popularity,
+  release_date,
+  img,
+  navigation,
+  overview,
+}) => {
   return (
     <Box alignItems="center">
       <Box
@@ -64,7 +71,20 @@ const Card = ({ title, popularity, release_date, img, navigation }) => {
           </Stack>
 
           <VStack alignItems="center">
-            <Button width="100%">More Details</Button>
+            <Button
+              width="100%"
+              onPress={() =>
+                navigation.navigate("Details Page", {
+                  title,
+                  popularity,
+                  release_date,
+                  img,
+                  overview,
+                })
+              }
+            >
+              More Details
+            </Button>
           </VStack>
         </Stack>
       </Box>

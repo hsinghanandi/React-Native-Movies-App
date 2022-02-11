@@ -19,6 +19,7 @@ const List = (props) => {
             item.release_date ? item.release_date : item.first_air_date
           }
           img={item.poster_path ? `${imgURL}${item.poster_path}` : ""}
+          overview={item.overview}
           navigation={navigation}
         />
       )}
