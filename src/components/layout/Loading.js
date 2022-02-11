@@ -1,12 +1,16 @@
-import { Center, Text } from 'native-base'
-import React from 'react'
+import { Center, Text } from "native-base";
+import { ActivityIndicator } from "react-native";
+
+import React from "react";
 
 const Loading = () => {
   return (
     <Center>
-      <Text>Loading Data, please wait</Text>
+      <Text>
+        <ActivityIndicator /> Loading Data, please wait
+      </Text>
     </Center>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

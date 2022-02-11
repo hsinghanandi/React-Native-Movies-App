@@ -31,7 +31,7 @@ const AppStack = () => {
           name="Home"
           component={TabStack}
           options={{
-            title: "Movies",
+            title: "Movies App",
             headerStyle: {
               backgroundColor: "#015069",
             },

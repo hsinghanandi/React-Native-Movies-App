@@ -8,6 +8,7 @@ const SelectForm = ({
   dropdown = [],
   populateMovies,
   callType,
+  setLoading,
 }) => {
   const fetchMovies = async (itemValue) => {
     const { data } = await getMovies(callType, itemValue);
@@ -33,6 +34,7 @@ const SelectForm = ({
         onValueChange={(itemValue) => {
           setOption(itemValue);
           fetchMovies(itemValue);
+          setLoading(true);
         }}
       >
         {dropdown &&
