@@ -5,6 +5,7 @@ import MoviesScreen from "../screens/MoviesScreen";
 import DetailScreen from "../screens/DetailScreen";
 import SearchResultsScreen from "../screens/SearchResultsScreen";
 import TVShowsScreen from "../screens/TVShowsScreen";
+import { LogBox } from 'react-native'
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
 const Tab = createMaterialTopTabNavigator();
@@ -24,6 +25,7 @@ const TabStack = () => (
 const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
+  LogBox.ignoreAllLogs()
   return (
     <NavigationContainer>
       <Stack.Navigator>

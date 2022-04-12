@@ -12,7 +12,6 @@ const List = (props) => {
       data={movies}
       renderItem={({ item, index }) => (
         <Card
-          key={index}
           title={item.title ? item.title : item.name}
           popularity={item.popularity}
           release_date={

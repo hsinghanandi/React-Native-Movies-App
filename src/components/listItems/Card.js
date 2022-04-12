@@ -1,12 +1,9 @@
 import {
-  Box,
   Button,
-  AspectRatio,
-  Stack,
-  Heading,
   Image,
   Text,
   VStack,
+  HStack
 } from "native-base";
 import React from "react";
 
@@ -19,77 +16,31 @@ const Card = ({
   overview,
 }) => {
   return (
-    <Box alignItems="center" mb={3}>
-      <Box
-        maxW="80"
+    <HStack mt="2" ml="2" mr="auto" mb={1}>
+      <Image
         rounded="lg"
-        overflow="hidden"
-        _web={{
-          shadow: 2,
-          borderWidth: 0,
-        }}
-        _light={{ backgroundColor: "gray.50" }}
-      >
-        <Box>
-          <AspectRatio w="100%" ratio={16 / 9}>
-            <Image
-              source={{
-                uri: img,
-              }}
-              alt="image"
-            />
-          </AspectRatio>
-        </Box>
+        source={{
+          uri: img
+        }} alt={title} size={'xl'} />
+      <VStack ml="2" >
+        <Text bold="true">
+          {title}
 
-        <Stack p="2" space={1}>
-          <Stack>
-            <Heading size="sm" ml="-1">
-              {title}
-            </Heading>
-          </Stack>
-          <Stack>
-            <Text
-              color="coolGray.600"
-              _dark={{
-                color: "warmGray.200",
-              }}
-              fontWeight="300"
-            >
-              Popularity: {popularity}
-            </Text>
-          </Stack>
-          <Stack>
-            <Text
-              color="coolGray.600"
-              _dark={{
-                color: "warmGray.200",
-              }}
-              fontWeight="300"
-            >
-              Release Date: {release_date}
-            </Text>
-          </Stack>
-
-          <VStack alignItems="center">
-            <Button
-              width="100%"
-              onPress={() =>
-                navigation.navigate("Details Page", {
-                  title,
-                  popularity,
-                  release_date,
-                  img,
-                  overview,
-                })
-              }
-            >
-              More Details
-            </Button>
-          </VStack>
-        </Stack>
-      </Box>
-    </Box>
-    // </VStack>
+        </Text>
+        <Text mt={2}>Popularity: {popularity} </Text>
+        <Text mt={0}>Release Date: {release_date}</Text>
+        <Button w="100%" mt={4} onPress={() =>
+          navigation.navigate("Details Page", {
+            title,
+            popularity,
+            release_date,
+            img,
+            overview,
+          })
+        }
+        > More Details </Button>
+      </VStack>
+    </HStack>
   );
 };
 
